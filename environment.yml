@@ -1,0 +1,20 @@
+name: mflinet
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - tensorflow>=2.10.0
+    - tensorflow-addons>=0.19.0
+    - keras-nlp>=0.6.0
+    - numpy>=1.23.0
+    - matplotlib>=3.5.0
+    - scipy>=1.9.0
+    - scikit-learn>=1.1.0
+    - pandas>=1.4.0
+    - h5py>=3.7.0
+    - pyyaml>=6.0
+    - tqdm>=4.64.0
+    - jupyter>=1.0.0
