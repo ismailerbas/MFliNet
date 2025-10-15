@@ -3,7 +3,7 @@ from tensorflow.keras.models import Model
 import tensorflow as tf
 import tensorflow_addons as tfa
 
-# Custom Differential Attention Layer with learnable lambda
+# Differential Attention Layer with learnable lambda
 class DifferentialAttention(Layer):
     def __init__(self, num_heads, key_dim, lambda_init=0.8, **kwargs):
         super(DifferentialAttention, self).__init__(**kwargs)
@@ -18,7 +18,7 @@ class DifferentialAttention(Layer):
             shape=(1,),
             initializer=tf.keras.initializers.Constant(self.lambda_init),
             trainable=True,
-            constraint=tf.keras.constraints.NonNeg()  # Optional: keep lambda >= 0
+            constraint=tf.keras.constraints.NonNeg() 
         )
         
         # Create two separate attention mechanisms
