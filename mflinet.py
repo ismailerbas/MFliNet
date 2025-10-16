@@ -91,7 +91,7 @@ decoder_output1_reshaped = Reshape((1, 1, 176))(decoder_output1)
 output1 = Conv2D(1, kernel_size=(1, 1), activation="elu", padding="same", kernel_regularizer="l2")(decoder_output1_reshaped)
 
 # Branch 2: Decoder for second output with cross-attention
-decoder_output2 = diff_transformer_decoder_block(encoder_output2, encoder_output1, num_heads=16, key_dim=176, ff_dim=176)
+decoder_output2 = diff_transformer_decoder_block(encoder_output1, encoder_output2, num_heads=16, key_dim=176, ff_dim=176)
 decoder_output2_reshaped = Reshape((1, 1, 176))(decoder_output2)
 output2 = Conv2D(1, kernel_size=(1, 1), activation="elu", padding="same", kernel_regularizer="l2")(decoder_output2_reshaped)
 
